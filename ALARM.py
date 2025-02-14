@@ -168,7 +168,7 @@ def process_incoming_data(device, sensor, json_value, client):
                     else:
                         print(f"Active alarm already exists for rule {rule.id} on device {device.serial_number}.")
 
-                    # ارسال دستور به پین‌ها
+                    # ارسال دستور به پین‌های دیوایس ها
                     pins = parse_pins(rule.pins)
                     for pin in pins:
                         ack = send_pin_command(client, device.serial_number, pin, "on" if rule.status == "on" else "off")
